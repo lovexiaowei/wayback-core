@@ -2,15 +2,16 @@
     "compilerOptions": {
         "declaration": true,
         "outDir": "dist",
-        "module": "commonjs",
-        // Modern browsers support all ES6 features, so ES6 is a good choice. 
+        "module": "ES6",
+        // Modern browsers support all ES6 features, so ES6 is a good choice.
         "target": "es6",
         "esModuleInterop": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "moduleResolution":"node"
     },
     "include": ["src/**/*"],
     "exclude": [
-        "node_modules", 
+        "node_modules",
         "**/*.spec.ts",
         "**/*.test.ts"
     ]

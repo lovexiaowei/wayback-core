@@ -68,7 +68,6 @@ export const getWaybackItemsWithLocalChanges = async (
     const level = +zoom.toFixed(0);
     const column = long2tile(longitude, level);
     const row = lat2tile(latitude, level);
-
     const releaseNums = await getReleaseNumOfWaybackItemsWithLocalChanges({
         column,
         row,
@@ -189,13 +188,11 @@ const getReleaseNumOfWaybackItemsWithLocalChanges = async ({
     level: number;
 }): Promise<number[]> => {
     const waybackItems = await getWaybackItems();
-
     return new Promise((resolve, reject) => {
         const results: Array<number> = [];
 
         // release number of the latest wayback item
         const mostRecentRelease = waybackItems[0].releaseNum;
-
         const waybackMapServerBaseUrl = getWaybackServiceBaseURL();
 
         /**
